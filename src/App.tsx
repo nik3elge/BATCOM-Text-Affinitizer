@@ -54,7 +54,7 @@ export default function App() {
   // State for raw script text
   const [rawText, setRawText] = useState<string>(() => {
     const saved = localStorage.getItem('affinity-converter-raw-text');
-    return saved !== null ? saved : SAMPLE_TEXT;
+    return saved !== null ? saved : '';
   });
 
   // State for block rules (Paragraph Styles)
@@ -119,7 +119,7 @@ export default function App() {
 
   const [autoApplyTypograf, setAutoApplyTypograf] = useState<boolean>(() => {
     const saved = localStorage.getItem('affinity-converter-auto-typograf');
-    return saved !== null ? saved === 'true' : false;
+    return saved !== null ? saved === 'true' : true;
   });
 
   const [typografRuleStates, setTypografRuleStates] = useState<Record<string, boolean>>(() => {
