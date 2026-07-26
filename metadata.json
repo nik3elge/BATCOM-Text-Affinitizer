@@ -1,0 +1,6 @@
+{
+  "name": "Affinity Publisher Text Converter",
+  "description": "A clean, client-side utility to convert raw text scripts (scenario scripts, translation drafts, comic dialogues) into styled HTML files with custom paragraph styles for automatic import into Affinity Publisher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
