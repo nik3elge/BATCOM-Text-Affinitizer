@@ -21,7 +21,8 @@ import {
   ExternalLink,
   Filter,
   Code,
-  Pilcrow
+  Pilcrow,
+  Github
 } from 'lucide-react';
 
 import { MarkerRule, ProcessedLine, InlineRule, IgnoreRule } from './types';
@@ -1475,23 +1476,47 @@ export default function App() {
             <p className="text-slate-400 max-w-xl text-xs leading-relaxed">
               Веб-инструмент для подготовки текста к вёрстке в Affinity by Canva. Он превращает сырой черновик в оттипографленный RTF‑файл с уже размеченными стилями. Система сама распознаёт пользовательские маркеры, расставляет стили абзацев и символов, а встроенный Типограф доводит качество текста до идеала. Итоговый файл легко импортируется в проект, где автоматически создаются новые стили или подтягиваются существующие.
             </p>
-            <p className="text-[11px] text-slate-500 mt-1">
-              © 2026
+            <p className="text-[11px] text-slate-500 mt-1 flex items-center justify-center md:justify-start gap-2">
+              <span>© 2026</span>
+              <span>•</span>
+              <a
+                href="https://github.com/nik3elge/BATCOM-Text-Affinitizer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors underline decoration-slate-600 hover:decoration-slate-300"
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub проекта</span>
+              </a>
             </p>
           </div>
 
           <div className="flex flex-col items-center md:items-end gap-3 shrink-0">
-            <a
-              href="https://boosty.to/nananabatcom/donate"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 shadow-md transition-all group cursor-pointer"
-              title="Поддержать проект на Boosty"
-            >
-              <BoostyIcon className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-              <span>Поддержать проект на Boosty</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-            </a>
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-2.5">
+              <a
+                href="https://github.com/nik3elge/BATCOM-Text-Affinitizer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 shadow-sm transition-all group cursor-pointer"
+                title="Репозиторий на GitHub"
+              >
+                <Github className="w-4 h-4 text-slate-300 group-hover:scale-110 transition-transform" />
+                <span>GitHub</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+
+              <a
+                href="https://boosty.to/nananabatcom/donate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 shadow-md transition-all group cursor-pointer"
+                title="Поддержать проект на Boosty"
+              >
+                <BoostyIcon className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+                <span>Поддержать на Boosty</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
 
             <div className="flex flex-col items-center md:items-end gap-1.5 bg-slate-800/60 p-3 rounded-xl border border-slate-800 w-full">
               <span className="text-[11px] font-semibold text-slate-400">Использованные библиотеки:</span>
