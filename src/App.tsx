@@ -801,7 +801,8 @@ export default function App() {
                               checked={rule.enabled}
                               onChange={() => handleToggleIgnoreRule(rule.id)}
                               title={rule.enabled ? 'Отключить правило' : 'Включить правило'}
-                              className="w-4 h-4 text-blue-600 rounded-md border-slate-300 focus:ring-blue-500 cursor-pointer shrink-0"
+                              style={{ accentColor: '#2563eb' }}
+                              className="w-4 h-4 accent-blue-600 text-blue-600 rounded-md border-slate-300 focus:ring-blue-500 cursor-pointer shrink-0"
                             />
                             <select
                               value={rule.matchMode}
@@ -1244,6 +1245,7 @@ export default function App() {
                   id="auto-typograf-toggle"
                   checked={autoApplyTypograf}
                   onChange={(e) => setAutoApplyTypograf(e.target.checked)}
+                  style={{ accentColor: '#4f46e5' }}
                   className="w-3.5 h-3.5 accent-indigo-600 text-indigo-600 rounded-sm border-slate-300 focus:ring-indigo-500 cursor-pointer shrink-0"
                 />
                 <span>Автоматически применять типограф перед конвертацией в RTF</span>
@@ -1365,6 +1367,7 @@ export default function App() {
                           type="checkbox"
                           checked={isEnabled}
                           onChange={() => {}}
+                          style={{ accentColor: '#4f46e5' }}
                           className="w-4 h-4 accent-indigo-600 text-indigo-600 rounded border-indigo-300 focus:ring-indigo-500 cursor-pointer mt-0.5 shrink-0"
                         />
                         <div className="flex flex-col min-w-0 flex-1">
@@ -1479,15 +1482,7 @@ export default function App() {
             <p className="text-[11px] text-slate-500 mt-1 flex items-center justify-center md:justify-start gap-2">
               <span>© 2026</span>
               <span>•</span>
-              <a
-                href="https://github.com/nik3elge/BATCOM-Text-Affinitizer"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors underline decoration-slate-600 hover:decoration-slate-300"
-              >
-                <Github className="w-3.5 h-3.5" />
-                <span>GitHub проекта</span>
-              </a>
+              <span>Никто и ничто не защищено.</span>
             </p>
           </div>
 
