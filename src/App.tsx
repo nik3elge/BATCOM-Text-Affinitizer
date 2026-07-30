@@ -660,16 +660,6 @@ export default function App() {
             </div>
           </div>
           <div className="flex items-center gap-2.5">
-            <a
-              href="https://boosty.to/nananabatcom/donate"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-orange-50 hover:bg-orange-100 text-orange-600 border border-orange-200/80 transition-all shadow-2xs group"
-              title="Поддержать проект на Boosty"
-            >
-              <BoostyIcon className="w-3.5 h-3.5 text-orange-500 group-hover:scale-110 transition-transform" />
-              <span>Поддержать</span>
-            </a>
             <button
               onClick={() => setShowGuide(!showGuide)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
@@ -681,6 +671,16 @@ export default function App() {
               <HelpCircle className="w-3.5 h-3.5" />
               <span>{showGuide ? 'Скрыть инструкцию' : 'Показать инструкцию'}</span>
             </button>
+            <a
+              href="https://boosty.to/nananabatcom/donate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-orange-50 hover:bg-orange-100 text-orange-600 border border-orange-200/80 transition-all shadow-2xs group"
+              title="Поддержать проект на Boosty"
+            >
+              <BoostyIcon className="w-3.5 h-3.5 text-orange-500 group-hover:scale-110 transition-transform" />
+              <span>Поддержать</span>
+            </a>
           </div>
         </div>
       </header>
