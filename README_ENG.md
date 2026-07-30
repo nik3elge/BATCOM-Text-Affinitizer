@@ -34,8 +34,8 @@ At the same time, the built-in **typographer** elevates the typesetting quality�
 - **Default Style:** Lines with no matches are assigned a base style (`base`, `Normal`, or user-defined).
 
 #### 2. ✍️ Inline Character Styling (Character Styles)
-- **Delimiters:** Automatically highlights words and phrases using special characters (e.g., `**bold**`, `*italic*`, `==highlighted==`).
-- **Style Mapping:** Converts delimited text directly into Affinity character styles.
+- **Inline Text Markup:** Detects custom delimiter symbols (e.g., `**bold**`, `*italic*`, `==highlighted==`) within sentences.
+- **Style Mapping:** Instantly converts the marked text into corresponding Affinity character styles while removing the raw delimiters.
 
 #### 3. 🧹 Line Filtering and Exclusion
 - **Empty Line Removal:** Automatically skips blank lines.
@@ -61,7 +61,6 @@ At the same time, the built-in **typographer** elevates the typesetting quality�
 * **Icons:** [Lucide React](https://lucide.dev/)
 * **Text Processing:**
   * [typograf](https://github.com/typograf/typograf) — Automated typographic formatting engine
-  * [eyo-kernel](https://github.com/e2yo/eyo-kernel) — Russian letter "Ё" restoration module
 
 ---
 
