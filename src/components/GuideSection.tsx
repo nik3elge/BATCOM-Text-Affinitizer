@@ -1,6 +1,25 @@
 import React, { useRef } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight, X, Download } from 'lucide-react';
 
+const ReapplyTextStylesIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    {/* Capital T */}
+    <path d="M 3 5 h 9" />
+    <path d="M 7.5 5 v 13" />
+    {/* Clockwise curved arrow on the lower right */}
+    <path d="M 13.5 10.5 a 4.5 4.5 0 0 1 5.5 4.5 c 0 2.2 -1.5 4.5 -4 5" />
+    <polyline points="17 18 14.5 20.2 16.8 22.5" />
+  </svg>
+);
+
 interface GuideSectionProps {
   onClose: () => void;
 }
@@ -109,7 +128,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ onClose }) => {
             <p>Для этого окружите нужное слово маркерами-ограничителями (например, <b><code>**</code></b> для <b>жирного</b> шрифта или <b><code>*</code></b> для <i>курсива</i>) и свяжите их с соответствующим стилем.</p>
             <p>Все найденные ограничители <b>сотрутся из финального текста</b>.</p>
             <div className="mt-3 p-3 rounded-xl bg-gradient-to-r from-indigo-50/90 via-blue-50/80 to-indigo-50/70 border border-indigo-200/80 shadow-2xs flex items-start gap-2.5 text-slate-800">
-              <div className="p-1.5 bg-indigo-600 text-white rounded-lg shrink-0 mt-0.5 shadow-2xs">
+              <div className="p-1.5 bg-blue-600 text-white rounded-lg shrink-0 mt-0.5 shadow-2xs">
                 <Download className="w-3.5 h-3.5" />
               </div>
               <p className="text-[11px] leading-relaxed text-slate-700 font-medium">
@@ -142,7 +161,14 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ onClose }) => {
             <p>Нажмите <b>«Конвертировать и скачать»</b>. Вы получите файл в формате <b>RTF</b> с внедрённой таблицей стилей.</p>
             <p>В Affinity создайте текстовый фрейм, нажмите <b>File → Place</b> и выберите этот RTF‑файл.</p>
             <p>Если указанных стилей в документе до этого не было, то они появятся в панели <b>Text Styles.</b></p>
-            <p>Для применения стилей выберите весь текст и нажмите кнопку <b>Reapply Text Styles</b> в панели Text Styles.</p>
+            <div className="mt-3 p-3 rounded-xl bg-gradient-to-r from-indigo-50/90 via-blue-50/80 to-indigo-50/70 border border-indigo-200/80 shadow-2xs flex items-start gap-2.5 text-slate-800">
+              <div className="p-1.5 bg-blue-600 text-white rounded-lg shrink-0 mt-0.5 shadow-2xs">
+                <ReapplyTextStylesIcon className="w-3.5 h-3.5" />
+              </div>
+              <p className="text-[11px] leading-relaxed text-slate-700 font-medium">
+                Для применения стилей выберите <b>весь текст (Ctrl+A)</b> и нажмите кнопку <b>Reapply Text Styles</b> в панели <b>Text Styles</b>.
+              </p>
+            </div>
           </div>
         </div>
       </div>
