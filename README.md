@@ -1,4 +1,11 @@
-<p align="center"> <img src="https://img.shields.io/badge/React-18-blue?logo=react" alt="React"> <img src="https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript" alt="TypeScript"> <img src="https://img.shields.io/badge/Tailwind_CSS-3.0-38bdf8?logo=tailwindcss" alt="TailwindCSS"> <img src="https://img.shields.io/badge/Vite-6.0-646cff?logo=vite" alt="Vite"> <a href="https://nik3elge.github.io/BATCOM-Text-Affinitizer"><img src="https://img.shields.io/badge/site-online-brightgreen" alt="site"></a> <a target="_blank" href="https://boosty.to/nananabatcom/donate"><img src="https://img.shields.io/badge/Boosty-BATCOM-orange?logo=boosty&logoColor=white" alt="Boosty"></a> </p>
+<p align="center">
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-18-blue?logo=react" alt="React"></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript" alt="TypeScript"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-3.0-38bdf8?logo=tailwindcss" alt="TailwindCSS"></a>
+  <a href="https://vite.dev/"><img src="https://img.shields.io/badge/Vite-6.0-646cff?logo=vite" alt="Vite"></a>
+  <a href="https://nik3elge.github.io/BATCOM-Text-Affinitizer"><img src="https://img.shields.io/badge/site-online-brightgreen" alt="site"></a>
+  <a href="https://boosty.to/nananabatcom/donate"><img src="https://img.shields.io/badge/Boosty-BATCOM-orange?logo=boosty&logoColor=white" alt="Boosty"></a>
+</p>
 
 <h1 align="center">Аффинизатор текста от BATCOM</h1>
 
@@ -46,13 +53,12 @@
 
 ## 🛠 Технологический стек
 
-- **Фреймворк**: [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Сборщик**: [Vite](https://vitejs.dev/)
-- **Стилизация**: [Tailwind CSS](https://tailwindcss.com/)
-- **Иконки**: [Lucide React](https://lucide.dev/)
-- **Типографика**: 
-  - [typograf](https://github.com/typograf/typograf) — подготовка и форматирование типографики
-  - [eyo-kernel](https://github.com/e2yo/eyo-kernel) — модуль восстановления буквы «Ё»
+* **Core:** [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) + [Vite](https://vite.dev/)
+* **Стилизация:** [Tailwind CSS](https://tailwindcss.com/)
+* **Иконки:** [Lucide React](https://lucide.dev/)
+* **Работа с текстом:**
+  * [typograf](https://github.com/typograf/typograf) — подготовка и автоматическое форматирование типографики
+  * [eyo-kernel](https://github.com/e2yo/eyo-kernel) — модуль автоматической расстановки буквы «Ё»
 
 ---
 
