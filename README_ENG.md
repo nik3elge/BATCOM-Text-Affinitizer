@@ -44,7 +44,7 @@ At the same time, the built-in **typographer** elevates the typesetting quality�
 
 #### 4. 🔠 Built-in Typographer (Typograf)
 - **Automated Typesetting:** Replaces hyphens with em-dashes (—) in dialogues/ranges and applies proper quotation marks.
-- **Smart Spacing:** Binds prepositions, conjunctions, and numbers with non-breaking spaces, removing duplicate spaces and redundant punctuation.
+- **Smart Spacing:** Inserts non-breaking spaces to prevent orphaned words, numbers, and symbols at line breaks, while cleaning up duplicate spaces and improper punctuation.
 - **Full Control:** Toggle individual typographic rules on or off based on your project needs.
 
 #### 5. 💾 Import and Export
