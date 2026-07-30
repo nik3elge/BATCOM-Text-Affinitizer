@@ -13,7 +13,7 @@
   <b><a href="README.md">Русский</a> | English</b>
 </p>
 
-**A web tool designed to prepare text for typesetting in Affinity by Canva**. It transforms a raw draft into a properly formatted **RTF file** with mapped styles. The system automatically detects custom markers, assigns paragraph and character styles, while the built-in **typographer** ensures perfect typesetting. The resulting file imports seamlessly into your project, automatically creating new styles or matching existing ones.
+A web tool for preparing text for layout in **Affinity by Canva**. It transforms a raw drafts into a properly formatted **RTF file** with tagged styles. The system auto-detects user markers, applies paragraph and character styles, and built-in typography features ensure polished output. The final file imports effortlessly, automatically generating new styles or linking to existing ones.
 
 ---
 
