@@ -485,8 +485,8 @@ export const TRANSLATIONS = {
 
     // Footer
     footerTitle: 'BATCOM Text Affinitizer',
-    footerDescription: 'A web tool for preparing text for layout in Affinity by Canva. It transforms raw drafts into typeset RTF files with tagged styles. The system auto-detects user markers, applies paragraph and character styles, and built-in typography features ensure polished output. The final file imports effortlessly, automatically generating new styles or linking to existing ones.',
-    footerCopyright: 'Not affiliated with Affinity or Canva.',
+    footerDescription: 'A web tool for preparing text for layout in Affinity by Canva. It transforms a raw drafts into a properly formatted RTF file with tagged styles. The system auto-detects user markers, applies paragraph and character styles, and built-in typography features ensure polished output. The final file imports effortlessly, automatically generating new styles or linking to existing ones.',
+    footerCopyright: 'Not affiliated with Affinity or Canva.',
     githubRepoTooltip: 'Repository on GitHub',
     supportBoostyTooltip: 'Support project on Boosty',
     supportBoostyBtn: 'Support on Boosty',
