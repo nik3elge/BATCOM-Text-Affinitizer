@@ -10,7 +10,7 @@
 <h1 align="center">BATCOM Text Affinitizer</h1>
 
 <p align="center">
-  <b>English | <a href="README.md">Русский</a></b>
+  <b><a href="README.md">Русский</a> | English</b>
 </p>
 
 **A web tool designed to prepare text for typesetting in Affinity by Canva**. It transforms a raw draft into a properly formatted **RTF file** with mapped styles. The system automatically detects custom markers, assigns paragraph and character styles, while the built-in **typographer** ensures perfect typesetting. The resulting file imports seamlessly into your project, automatically creating new styles or matching existing ones.
