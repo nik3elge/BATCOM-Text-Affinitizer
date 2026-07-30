@@ -42,7 +42,7 @@ At the same time, the built-in **typographer** elevates the typesetting quality�
 - **Service Line Ignorance:** Hides technical notes or comments starting with prefix characters (e.g., `#`, `//`, `=`).
 - **Flexible Filters:** Filter out content by line prefixes, keywords, or custom regex.
 
-#### 4. 🔠 Built-in Typographer (Typograf + Eyo)
+#### 4. 🔠 Built-in Typographer (Typograf)
 - **Automated Typesetting:** Replaces hyphens with em-dashes (—) in dialogues/ranges and applies proper quotation marks.
 - **Smart Spacing:** Binds prepositions, conjunctions, and numbers with non-breaking spaces, removing duplicate spaces and redundant punctuation.
 - **Full Control:** Toggle individual typographic rules on or off based on your project needs.
