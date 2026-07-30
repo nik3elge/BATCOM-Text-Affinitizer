@@ -644,38 +644,38 @@ export default function App() {
       )}
 
       {/* Header */}
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <header className="bg-white border-b border-slate-200 py-3.5 sm:py-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:h-16 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-200">
+            <div className="w-9 h-9 sm:w-8 sm:h-8 bg-blue-600 rounded-xl sm:rounded-lg flex items-center justify-center shadow-md shadow-blue-200 shrink-0">
               <Pilcrow className="w-5 h-5 text-white" />
             </div>
-            <div>
-              <h1 id="app-title" className="font-display text-lg font-bold text-slate-800 tracking-tight">
+            <div className="min-w-0">
+              <h1 id="app-title" className="font-display text-base sm:text-lg font-bold text-slate-800 tracking-tight leading-snug">
                 Аффинизатор текста от BATCOM
               </h1>
-              <p className="text-xs text-slate-500 font-normal">
+              <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-tight">
                 Инструмент для автоматической разметки текста под ваши стили в Affinity.
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-100 sm:border-none">
             <button
               onClick={() => setShowGuide(!showGuide)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                 showGuide 
                   ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
                   : 'bg-blue-50 text-blue-600 hover:bg-blue-100 border border-blue-100'
               }`}
             >
               <HelpCircle className="w-3.5 h-3.5" />
-              <span>{showGuide ? 'Скрыть инструкцию' : 'Показать инструкцию'}</span>
+              <span>{showGuide ? 'Скрыть инструкцию' : 'Инструкция'}</span>
             </button>
             <a
               href="https://boosty.to/nananabatcom/donate"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-orange-50 hover:bg-orange-100 text-orange-600 border border-orange-200/80 transition-all shadow-2xs group"
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 rounded-lg text-xs font-semibold bg-orange-50 hover:bg-orange-100 text-orange-600 border border-orange-200/80 transition-all shadow-2xs group"
               title="Поддержать проект на Boosty"
             >
               <BoostyIcon className="w-3.5 h-3.5 text-orange-500 group-hover:scale-110 transition-transform" />
@@ -696,11 +696,11 @@ export default function App() {
           <div className="lg:col-span-6 flex flex-col gap-4">
             <div className={`bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col transition-all duration-300 ${
               showGuide 
-                ? 'h-[550px] lg:h-[calc(100vh-450px)] lg:min-h-[400px]' 
-                : 'h-[750px] lg:h-[calc(100vh-250px)] lg:min-h-[550px]'
+                ? 'h-[480px] sm:h-[550px] lg:h-[calc(100vh-450px)] lg:min-h-[400px]' 
+                : 'h-[520px] sm:h-[700px] lg:h-[calc(100vh-250px)] lg:min-h-[550px]'
             }`}>
               {/* Header */}
-              <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="px-4 sm:px-5 py-3.5 sm:py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div className="p-2 bg-blue-50 text-blue-600 rounded-xl border border-blue-100 shrink-0">
                     <FileText className="w-5 h-5" />
@@ -710,11 +710,11 @@ export default function App() {
                     <p className="text-xs text-slate-500 truncate">Ваш текст для обработки</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 shrink-0 flex-wrap">
+                <div className="flex items-center gap-1.5 shrink-0 w-full sm:w-auto justify-end">
                   <button
                     onClick={handleRunTypografOnRawText}
                     title="Применить типограф к исходному тексту в Блоке А"
-                    className="flex items-center gap-1.5 text-xs text-indigo-600 hover:text-indigo-700 border border-indigo-200 hover:border-indigo-300 bg-indigo-50/60 hover:bg-indigo-50 px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-xs text-indigo-600 hover:text-indigo-700 border border-indigo-200 hover:border-indigo-300 bg-indigo-50/60 hover:bg-indigo-50 px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                   >
                     <Wand2 className="w-3.5 h-3.5 text-indigo-500" />
                     <span>Типограф</span>
@@ -722,7 +722,7 @@ export default function App() {
                   <button
                     onClick={handleClearText}
                     title="Очистить всё"
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-rose-600 border border-slate-200 hover:border-rose-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-xs text-slate-500 hover:text-rose-600 border border-slate-200 hover:border-rose-200 bg-white px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                     <span>Очистить</span>
@@ -731,8 +731,8 @@ export default function App() {
               </div>
 
               {/* Ignore Rules Sub-Header Bar */}
-              <div className="px-5 py-3 bg-slate-50/60 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap items-center gap-2.5">
+              <div className="px-4 sm:px-5 py-3 bg-slate-50/60 border-b border-slate-100 flex flex-wrap items-center justify-between gap-2.5">
+                <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
                   <label className="text-xs font-semibold text-slate-700 whitespace-nowrap shrink-0">
                     Игнорирование строк:
                   </label>
@@ -877,20 +877,17 @@ export default function App() {
                 <textarea
                   value={rawText}
                   onChange={(e) => setRawText(e.target.value)}
-                  placeholder="Вставьте сюда ваш сырой сценарий или перетащите текстовый файл...
-Пример:
-#01
-Место+ Готэм.
-Закадр+ Стояла дождливая тёмная ночь.
-Чего стоишь? В ногах правды нет…"
+                  placeholder=""
                   className="w-full flex-1 resize-none bg-transparent text-slate-800 placeholder-slate-400 focus:outline-hidden text-sm leading-relaxed font-mono border-none"
                 />
 
                 {rawText.trim() === '' && !dragActive && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center pointer-events-none select-none">
-                    <Upload className="w-8 h-8 text-slate-300 mb-3" />
-                    <p className="text-slate-500 text-sm font-medium">Перетащите сюда текстовый файл (.txt)</p>
-                    <p className="text-slate-400 text-xs mt-1">или кликните кнопку ниже для импорта</p>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8 text-center pointer-events-none select-none">
+                    <Upload className="w-7 h-7 sm:w-8 sm:h-8 text-slate-300 mb-2 sm:mb-3" />
+                    <p className="hidden sm:block text-slate-500 text-sm font-medium">Вставьте текст или перетащите сюда файл (.txt)</p>
+                    <p className="block sm:hidden text-slate-500 text-xs sm:text-sm font-medium">Вставьте текст или загрузите файл (.txt)</p>
+                    <p className="hidden sm:block text-slate-400 text-xs mt-1">или воспользуйтесь кнопкой «Загрузить .txt» ниже</p>
+                    <p className="block sm:hidden text-slate-400 text-[11px] mt-1">воспользуйтесь кнопкой «Загрузить .txt» ниже</p>
                   </div>
                 )}
 
@@ -906,30 +903,28 @@ export default function App() {
               </div>
 
               {/* Footer Panel Import Selector */}
-              <div className="px-4 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                <div className="flex items-center gap-2 font-medium flex-wrap">
-                  <span className="text-slate-700">Строки: {processedLines.length}</span>
+              <div className="px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-2 text-xs text-slate-500 shrink-0">
+                <div className="flex items-center justify-between sm:justify-start gap-2.5 font-medium bg-slate-100/70 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-lg text-[11px] sm:text-xs">
+                  <span>Строки: <strong className="text-slate-700">{processedLines.length}</strong></span>
                   <span className="text-slate-300">|</span>
-                  <span className="text-slate-700">Пропущено: {ignoredLinesCount}</span>
+                  <span>Пропущено: <strong className="text-slate-700">{ignoredLinesCount}</strong></span>
                   <span className="text-slate-300">|</span>
-                  <span>Символов: {rawText.length}</span>
+                  <span>Символов: <strong className="text-slate-700">{rawText.length}</strong></span>
                 </div>
-                <div>
-                  <button
-                    onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
-                  >
-                    <Upload className="w-3.5 h-3.5 text-blue-600" />
-                    <span>Загрузить .txt</span>
-                  </button>
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    onChange={handleTextFileUpload}
-                    accept=".txt,.rtf"
-                    className="hidden"
-                  />
-                </div>
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex items-center justify-center gap-1.5 text-xs text-slate-600 sm:text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-3 py-2 sm:py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs w-full sm:w-auto"
+                >
+                  <Upload className="w-3.5 h-3.5 text-blue-600" />
+                  <span>Загрузить .txt</span>
+                </button>
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleTextFileUpload}
+                  accept=".txt,.rtf"
+                  className="hidden"
+                />
               </div>
             </div>
           </div>
@@ -938,11 +933,11 @@ export default function App() {
           <div className="lg:col-span-6 flex flex-col gap-4">
             <div className={`bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col transition-all duration-300 ${
               showGuide 
-                ? 'h-[550px] lg:h-[calc(100vh-450px)] lg:min-h-[400px]' 
-                : 'h-[750px] lg:h-[calc(100vh-250px)] lg:min-h-[550px]'
+                ? 'h-[480px] sm:h-[550px] lg:h-[calc(100vh-450px)] lg:min-h-[400px]' 
+                : 'h-[520px] sm:h-[700px] lg:h-[calc(100vh-250px)] lg:min-h-[550px]'
             }`}>
               {/* Header */}
-              <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="px-4 sm:px-5 py-3.5 sm:py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div className="p-2 bg-blue-50 text-blue-600 rounded-xl border border-blue-100 shrink-0">
                     <Sliders className="w-5 h-5" />
@@ -952,11 +947,11 @@ export default function App() {
                     <p className="text-xs text-slate-500 truncate">Правила замен и стили RTF</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 shrink-0 flex-wrap">
+                <div className="flex items-center gap-1.5 shrink-0 w-full sm:w-auto justify-end">
                   <button
                     onClick={() => rulesFileInputRef.current?.click()}
                     title="Импортировать настройки из файла .json"
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                   >
                     <Upload className="w-3.5 h-3.5 text-blue-600" />
                     <span>Импорт</span>
@@ -971,7 +966,7 @@ export default function App() {
                   <button
                     onClick={handleExportRules}
                     title="Экспортировать настройки в файл .json"
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                   >
                     <Download className="w-3.5 h-3.5 text-blue-600" />
                     <span>Экспорт</span>
@@ -979,7 +974,7 @@ export default function App() {
                   <button
                     onClick={() => setShowClearRulesConfirm(true)}
                     title="Очистить настройки"
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-rose-600 border border-slate-200 hover:border-rose-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 text-xs text-slate-500 hover:text-rose-600 border border-slate-200 hover:border-rose-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                     <span>Очистить</span>
@@ -1191,28 +1186,28 @@ export default function App() {
               </div>
 
               {/* Add rule footer */}
-              <div className="px-4 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 shrink-0">
-                <div className="flex items-center gap-2 font-medium">
-                  <span className="text-slate-700">Стилей абзацев: {rules.length}</span>
+              <div className="px-3.5 sm:px-4 py-2.5 sm:py-3 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-2 text-xs text-slate-500 shrink-0">
+                <div className="flex items-center justify-between sm:justify-start gap-3 font-medium bg-slate-100/70 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-lg text-[11px] sm:text-xs">
+                  <span>Стилей абзацев: <strong className="text-slate-700">{rules.length}</strong></span>
                   <span className="text-slate-300">|</span>
-                  <span>Стилей символов: {inlineRules.length}</span>
+                  <span>Стилей символов: <strong className="text-slate-700">{inlineRules.length}</strong></span>
                 </div>
-                <div className="flex items-center gap-1.5">
+                <div className="grid grid-cols-2 sm:flex items-center gap-1.5 w-full sm:w-auto">
                   <button
                     onClick={handleAddRule}
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
+                    className="flex items-center justify-center gap-1.5 text-xs text-slate-600 sm:text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-200 bg-white px-2.5 py-2 sm:py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                     title="Добавить новый маркер абзаца"
                   >
-                    <Plus className="w-3.5 h-3.5 text-blue-500" />
-                    <span>Стиль абзаца</span>
+                    <Plus className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                    <span className="truncate">Стиль абзаца</span>
                   </button>
                   <button
                     onClick={handleAddInlineRule}
-                    className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-violet-600 border border-slate-200 hover:border-violet-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer"
+                    className="flex items-center justify-center gap-1.5 text-xs text-slate-600 sm:text-slate-500 hover:text-violet-600 border border-slate-200 hover:border-violet-200 bg-white px-2.5 py-2 sm:py-1.5 rounded-lg font-medium transition-all cursor-pointer shadow-2xs"
                     title="Добавить новый стиль символа"
                   >
-                    <Plus className="w-3.5 h-3.5 text-violet-500" />
-                    <span>Стиль символа</span>
+                    <Plus className="w-3.5 h-3.5 text-violet-500 shrink-0" />
+                    <span className="truncate">Стиль символа</span>
                   </button>
                 </div>
               </div>
@@ -1222,7 +1217,7 @@ export default function App() {
 
         {/* Block В: Typograf */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col transition-all">
-          <div className={`px-5 py-4 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-4 ${isTypografRulesExpanded ? 'border-b border-slate-100' : ''}`}>
+          <div className={`px-4 sm:px-5 py-3.5 sm:py-4 bg-slate-50/50 flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 ${isTypografRulesExpanded ? 'border-b border-slate-100' : ''}`}>
             <div className="flex items-center gap-2.5 min-w-0">
               <div className="p-2 bg-indigo-50 text-indigo-600 rounded-xl border border-indigo-100 shrink-0">
                 <Wand2 className="w-5 h-5" />
@@ -1238,22 +1233,22 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 flex-wrap shrink-0">
-              <label htmlFor="auto-typograf-toggle" className="flex items-center gap-2 cursor-pointer text-xs text-slate-700 font-medium select-none bg-white px-2.5 py-1.5 rounded-lg border border-slate-200/80 hover:bg-slate-50 transition-colors shadow-2xs">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 shrink-0 w-full lg:w-auto">
+              <label htmlFor="auto-typograf-toggle" className="flex items-center justify-between sm:justify-start gap-2 cursor-pointer text-xs text-slate-700 font-medium select-none bg-white px-3 py-2 sm:py-1.5 rounded-lg border border-slate-200/80 hover:bg-slate-50 transition-colors shadow-2xs w-full sm:w-auto">
                 <input
                   type="checkbox"
                   id="auto-typograf-toggle"
                   checked={autoApplyTypograf}
                   onChange={(e) => setAutoApplyTypograf(e.target.checked)}
                   style={{ accentColor: '#4f46e5' }}
-                  className="w-3.5 h-3.5 accent-indigo-600 text-indigo-600 rounded-sm border-slate-300 focus:ring-indigo-500 cursor-pointer shrink-0"
+                  className="w-4 h-4 accent-indigo-600 text-indigo-600 rounded-sm border-slate-300 focus:ring-indigo-500 cursor-pointer shrink-0"
                 />
-                <span>Автоматически применять типограф перед конвертацией в RTF</span>
+                <span className="text-[11px] sm:text-xs">Автоматически применять типограф перед конвертацией в RTF</span>
               </label>
 
               <button
                 onClick={() => setIsTypografRulesExpanded(prev => !prev)}
-                className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-indigo-600 border border-slate-200 hover:border-indigo-200 bg-white px-2.5 py-1.5 rounded-lg font-medium transition-all cursor-pointer shrink-0"
+                className="flex items-center justify-center gap-1.5 text-xs text-slate-600 sm:text-slate-500 hover:text-indigo-600 border border-slate-200 hover:border-indigo-200 bg-white px-3 py-2 sm:py-1.5 rounded-lg font-medium transition-all cursor-pointer shrink-0 w-full sm:w-auto shadow-2xs"
               >
                 <Sliders className="w-3.5 h-3.5 text-indigo-600" />
                 <span>{isTypografRulesExpanded ? 'Скрыть правила' : 'Показать правила'}</span>
