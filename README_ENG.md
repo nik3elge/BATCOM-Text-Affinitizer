@@ -14,13 +14,13 @@
 
 </div>
 
-A web tool for preparing text for layout in **Affinity by Canva**. It transforms a raw drafts into a properly formatted **RTF file** with tagged styles. The system auto-detects user markers, applies paragraph and character styles, and built-in typography features ensure polished output. The final file imports effortlessly, automatically generating new styles or linking to existing ones.
+A web tool for preparing text for layout in **Affinity by Canva**. It transforms a raw drafts into a properly formatted **RTF file** with tagged styles. The system auto-detects user markers, applies paragraph and character styles, and built-in typography features ensure polished output. The final file imports effortlessly, automatically generating new styles or linking to existing ones.
 
 ---
 
 ## 🔍 About the Project
 
-When moving text into **Affinity by Canva**, you no longer need to manually assign **Paragraph Styles** and **Character Styles**. The Text Affinitizer analyzes your source material: it detects predefined markers or regex patterns, cleans them from the text, and binds the appropriate styles to each segment.
+When moving text into **Affinity by Canva**, you no longer need to manually assign **Paragraph Styles** and **Character Styles**. The Text Affinitizer analyzes your source material: it detects predefined markers or regex patterns, cleans them from the text, and binds the appropriate styles to each segment.
 
 At the same time, the built-in **typographer** elevates the typesetting quality—adding non-breaking spaces, applying correct quotes, and inserting proper dashes, with fully customizable rules. The output is a ready-to-use RTF file that imports into Affinity complete with a clean **style structure** and professional formatting.
 
@@ -61,7 +61,7 @@ At the same time, the built-in **typographer** elevates the typesetting quality�
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Icons:** [Lucide React](https://lucide.dev/)
 * **Text Processing:**
-  * [typograf](https://github.com/typograf/typograf) — Automated typographic formatting engine
+  * [typograf](https://github.com/typograf/typograf) — Automated typographic formatting engine.
 
 ---
 
