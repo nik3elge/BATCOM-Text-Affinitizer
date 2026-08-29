@@ -2,6 +2,8 @@
 
 <b><a href="README.md">Русский</a> | English</b>
 
+# Text Affinitizer by BATCOM
+
 [![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
@@ -9,8 +11,6 @@
 [![Site](https://img.shields.io/badge/site-online-brightgreen?style=flat-square)](https://nik3elge.github.io/BATCOM-Text-Affinitizer)
 [![Integration](https://img.shields.io/badge/Affinity-by%20Canva-bbee81?style=flat-square)](https://affinity.serif.com/)
 [![Boosty](https://img.shields.io/badge/Boosty-BATCOM-orange?style=flat-square&logo=boosty&logoColor=white)](https://boosty.to/nananabatcom/donate)
-
-# Text Affinitizer by BATCOM
 
 </div>
 
