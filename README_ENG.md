@@ -7,7 +7,7 @@
   <a href="https://boosty.to/nananabatcom/donate"><img src="https://img.shields.io/badge/Boosty-BATCOM-orange?logo=boosty&logoColor=white" alt="Boosty"></a>
 </p>
 
-<h1 align="center">BATCOM Text Affinitizer</h1>
+<h1 align="center">Text Affinitizer by BATCOM</h1>
 
 <p align="center">
   <b><a href="README.md">Русский</a> | English</b>
