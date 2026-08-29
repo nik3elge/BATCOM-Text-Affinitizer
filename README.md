@@ -1,17 +1,18 @@
-<p align="center">
-  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-18-blue?logo=react" alt="React"></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript" alt="TypeScript"></a>
-  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-3.0-38bdf8?logo=tailwindcss" alt="TailwindCSS"></a>
-  <a href="https://vite.dev/"><img src="https://img.shields.io/badge/Vite-6.0-646cff?logo=vite" alt="Vite"></a>
-  <a href="https://nik3elge.github.io/BATCOM-Text-Affinitizer"><img src="https://img.shields.io/badge/site-online-brightgreen" alt="site"></a>
-  <a href="https://boosty.to/nananabatcom/donate"><img src="https://img.shields.io/badge/Boosty-BATCOM-orange?logo=boosty&logoColor=white" alt="Boosty"></a>
-</p>
+<div align="center">
 
-<h1 align="center">Аффинизатор текста от BATCOM</h1>
+<b>Русский | <a href="README_ENG.md">English</a></b>
 
-<p align="center">
-  <b>Русский | <a href="README_ENG.md">English</a></b>
-</p>
+[![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-6.0-646cff?style=flat-square&logo=vite)](https://vite.dev/)
+[![Site](https://img.shields.io/badge/site-online-brightgreen?style=flat-square)](https://nik3elge.github.io/BATCOM-Text-Affinitizer)
+[![Integration](https://img.shields.io/badge/Affinity-by%20Canva-bbee81?style=flat-square)](https://affinity.serif.com/)
+[![Boosty](https://img.shields.io/badge/Boosty-BATCOM-orange?style=flat-square&logo=boosty&logoColor=white)](https://boosty.to/nananabatcom/donate)
+
+# Аффинизатор текста от BATCOM
+
+</div>
 
 Веб-инструмент для подготовки текста к **вёрстке в Affinity by Canva**. Он превращает сырой черновик в **RTF‑файл** с подготовленной типографикой и размеченными стилями. Система сама распознаёт пользовательские маркеры, расставляет стили абзацев и символов, а встроенный **типограф** доводит текст до идеала. Итоговый файл легко импортируется в проект, где автоматически создаются новые стили или подтягиваются существующие.
 
