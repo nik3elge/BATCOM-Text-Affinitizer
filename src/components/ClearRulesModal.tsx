@@ -23,6 +23,7 @@ export const ClearRulesModal: React.FC<ClearRulesModalProps> = ({
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg p-1.5 rounded-full hover:bg-slate-50 transition-colors cursor-pointer"
+          aria-label={t.modalCancel || 'Закрыть'}
         >
           &times;
         </button>

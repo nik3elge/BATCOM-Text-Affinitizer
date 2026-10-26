@@ -855,6 +855,7 @@ export default function App() {
                           onClick={() => setShowIgnorePanel(false)}
                           className="p-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-200/60 transition-colors cursor-pointer"
                           title={t.closePanelTooltip}
+                          aria-label={t.closePanelTooltip}
                         >
                           <X className="w-3.5 h-3.5" />
                         </button>
@@ -908,6 +909,7 @@ export default function App() {
                                 onClick={() => handleDeleteIgnoreRule(rule.id)}
                                 className="p-1 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors shrink-0 cursor-pointer"
                                 title={t.deleteRuleTooltip}
+                                aria-label={t.deleteRuleTooltip}
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
                               </button>
@@ -963,6 +965,7 @@ export default function App() {
                   value={rawText}
                   onChange={(e) => setRawText(e.target.value)}
                   placeholder=""
+                  aria-label={t.blockASubtitle}
                   className="w-full flex-1 resize-none bg-transparent text-slate-800 placeholder-slate-400 focus:outline-hidden text-sm leading-relaxed font-mono border-none"
                 />
 
@@ -1127,6 +1130,7 @@ export default function App() {
                                 onClick={() => handleDeleteRule(rule.id)}
                                 className="p-1 rounded-md text-slate-400 hover:bg-rose-50 hover:text-rose-600 transition-all cursor-pointer"
                                 title={t.deleteParaStyleTooltip}
+                                aria-label={t.deleteParaStyleTooltip}
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
                               </button>
@@ -1223,6 +1227,7 @@ export default function App() {
                               onClick={() => handleDeleteInlineRule(rule.id)}
                               className="p-1 rounded-md text-slate-400 hover:bg-rose-50 hover:text-rose-600 transition-all cursor-pointer"
                               title={t.deleteCharStyleTooltip}
+                              aria-label={t.deleteCharStyleTooltip}
                             >
                               <Trash2 className="w-3.5 h-3.5" />
                             </button>
@@ -1346,11 +1351,13 @@ export default function App() {
                     value={typografSearch}
                     onChange={(e) => setTypografSearch(e.target.value)}
                     placeholder={t.searchTypografPlaceholder}
+                    aria-label={t.searchTypografPlaceholder}
                     className="w-full bg-slate-50 border border-slate-200 focus:border-indigo-400 focus:bg-white focus:ring-indigo-100 rounded-xl pl-9 pr-8 py-2 text-xs font-medium text-slate-800 placeholder:text-slate-400 focus:ring-3 focus:outline-hidden transition-all"
                   />
                   {typografSearch && (
                     <button
                       onClick={() => setTypografSearch('')}
+                      aria-label="Очистить поиск"
                       className="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600"
                     >
                       <X className="w-3.5 h-3.5" />
@@ -1427,31 +1434,42 @@ export default function App() {
                   {filteredTypografRules.map(rule => {
                     const isEnabled = !!typografRuleStates[rule.id];
                     return (
-                      <div
+                      <button
+                        type="button"
                         key={rule.id}
+                        role="checkbox"
+                        aria-checked={isEnabled}
                         onClick={() => handleToggleTypografRule(rule.id)}
-                        className={`flex items-start gap-2.5 p-3 rounded-xl border transition-all cursor-pointer select-none relative group ${
+                        onKeyDown={(e) => {
+                          if (e.key === ' ' || e.key === 'Enter') {
+                            e.preventDefault();
+                            handleToggleTypografRule(rule.id);
+                          }
+                        }}
+                        className={`text-left w-full flex items-start gap-2.5 p-3 rounded-xl border transition-all cursor-pointer select-none relative group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 ${
                           isEnabled
-                            ? 'bg-indigo-50/40 border-indigo-200/80 hover:border-indigo-300 hover:bg-indigo-50/80 shadow-2xs'
-                            : 'bg-slate-50/60 border-slate-200/60 opacity-65 hover:opacity-100 hover:bg-slate-100/60'
+                            ? 'bg-indigo-50/50 border-indigo-200/90 hover:border-indigo-300 hover:bg-indigo-50/80 shadow-2xs'
+                            : 'bg-slate-50/70 border-slate-200/70 hover:border-slate-300 hover:bg-slate-100/70'
                         }`}
                       >
                         <input
                           type="checkbox"
                           checked={isEnabled}
                           onChange={() => {}}
+                          tabIndex={-1}
+                          aria-hidden="true"
                           style={{ accentColor: '#4f46e5' }}
-                          className="w-4 h-4 accent-indigo-600 text-indigo-600 rounded border-indigo-300 focus:ring-indigo-500 cursor-pointer mt-0.5 shrink-0"
+                          className="w-4 h-4 accent-indigo-600 text-indigo-600 rounded border-indigo-300 focus:ring-indigo-500 cursor-pointer mt-0.5 shrink-0 pointer-events-none"
                         />
                         <div className="flex flex-col min-w-0 flex-1">
                           <div className="flex items-start justify-between gap-1">
-                            <span className={`text-xs font-bold leading-snug ${isEnabled ? 'text-slate-900' : 'text-slate-600'}`}>
+                            <span className={`text-xs font-bold leading-snug ${isEnabled ? 'text-indigo-950' : 'text-slate-800'}`}>
                               {rule.title}
                             </span>
                           </div>
 
                           {rule.description && (
-                            <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                            <p className="text-[11px] text-slate-600 mt-0.5 leading-relaxed">
                               {rule.description}
                             </p>
                           )}
@@ -1465,7 +1483,7 @@ export default function App() {
                             </span>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>

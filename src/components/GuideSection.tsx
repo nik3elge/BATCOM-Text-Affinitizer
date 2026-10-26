@@ -52,6 +52,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
               onClick={() => handleScrollGuide('left')}
               className="p-1 sm:p-1.5 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-all cursor-pointer"
               title={t.scrollPrev}
+              aria-label={t.scrollPrev}
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -60,6 +61,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
               onClick={() => handleScrollGuide('right')}
               className="p-1.5 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-all cursor-pointer"
               title={t.scrollNext}
+              aria-label={t.scrollNext}
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -68,6 +70,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
             onClick={onClose}
             className="text-slate-400 hover:text-slate-600 p-1.5 rounded-xl hover:bg-white/80 transition-colors cursor-pointer"
             title={t.closeGuide}
+            aria-label={t.closeGuide}
           >
             <X className="w-4 h-4" />
           </button>
