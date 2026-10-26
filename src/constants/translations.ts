@@ -202,8 +202,16 @@ export const TRANSLATIONS = {
     convertBtn: 'Конвертировать и скачать .rtf',
     convertSubtext: 'RTF файл со встроенными стилями абзацев и символов для Affinity',
     
-    blockETitle: 'Блок Д: Предпросмотр кода RTF',
-    blockESubtitle: 'Сгенерированная RTF-разметка с таблицей стилей и тегами абзацев',
+    blockETitle: 'Блок Д: Предпросмотр результата',
+    blockESubtitle: 'Визуальное сопоставление стилей и сформированная разметка RTF',
+    tabVisualPreview: 'Визуальный просмотр',
+    tabRtfCode: 'Код RTF',
+    copyVisualText: 'Копировать текст',
+    copyRtfCode: 'Копировать RTF',
+    toastCopiedText: 'Форматированный текст скопирован в буфер',
+    toastCopiedRtf: 'Код RTF скопирован в буфер',
+    emptyPreview: 'Введите или вставьте текст в Блоке А для предпросмотра',
+    previewLinesCount: (count: number) => `Строк: ${count}`,
     kbSize: (sizeStr: string) => `${sizeStr} КБ`,
 
     // Modals & Toasts
@@ -449,8 +457,16 @@ export const TRANSLATIONS = {
     convertBtn: 'Convert & Download .rtf',
     convertSubtext: 'RTF file with embedded paragraph and character styles for Affinity',
     
-    blockETitle: 'Block E: RTF Code Preview',
-    blockESubtitle: 'Generated RTF markup with stylesheet and paragraph tags',
+    blockETitle: 'Block E: Result Preview',
+    blockESubtitle: 'Visual style verification and generated RTF markup',
+    tabVisualPreview: 'Visual Preview',
+    tabRtfCode: 'RTF Code',
+    copyVisualText: 'Copy Text',
+    copyRtfCode: 'Copy RTF',
+    toastCopiedText: 'Formatted text copied to clipboard',
+    toastCopiedRtf: 'RTF code copied to clipboard',
+    emptyPreview: 'Enter or paste text in Block A to preview styles',
+    previewLinesCount: (count: number) => `Lines: ${count}`,
     kbSize: (sizeStr: string) => `${sizeStr} KB`,
 
     // Modals & Toasts

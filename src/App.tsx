@@ -29,6 +29,7 @@ import { MarkerRule, ProcessedLine, InlineRule, IgnoreRule } from './types';
 import { BoostyIcon } from './components/BoostyIcon';
 import { GuideSection } from './components/GuideSection';
 import { ClearRulesModal } from './components/ClearRulesModal';
+import { PreviewSection } from './components/PreviewSection';
 
 import { 
   DEFAULT_RULES, 
@@ -1495,32 +1496,16 @@ export default function App() {
           </div>
         </div>
 
-        {/* Block Д: RTF Code Preview */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col transition-all">
-          <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2 bg-emerald-50 text-emerald-600 rounded-xl border border-emerald-100 shrink-0">
-                <Code className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-sm text-slate-800">{t.blockETitle}</h3>
-                <p className="text-xs text-slate-500">{t.blockESubtitle}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 self-start sm:self-auto">
-              <span className="text-xs font-semibold text-slate-500 bg-slate-100 border border-slate-200/80 px-2.5 py-1.5 rounded-lg">
-                {t.kbSize((new Blob([readableRTFContent]).size / 1024).toFixed(1))}
-              </span>
-            </div>
-          </div>
-
-          <div className="p-4 bg-slate-900 text-slate-200 font-mono text-xs leading-relaxed overflow-x-auto max-h-[380px] overflow-y-auto selection:bg-emerald-500/30 selection:text-emerald-200">
-            <pre className="whitespace-pre-wrap break-all text-emerald-400/90 font-mono">
-              {readableRTFContent}
-            </pre>
-          </div>
-        </div>
+        {/* Block Д: Result Preview (Visual & RTF Code) */}
+        <PreviewSection
+          processedLines={processedLines}
+          rules={rules}
+          inlineRules={inlineRules}
+          readableRTFContent={readableRTFContent}
+          generatedRTFContent={generatedRTFContent}
+          lang={lang}
+          onToast={triggerToast}
+        />
 
       </main>
 
