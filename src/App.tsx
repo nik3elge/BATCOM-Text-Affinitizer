@@ -54,6 +54,8 @@ import {
   generateRTFString 
 } from './utils/rtfGenerator';
 
+import { isValidRegex, compileSafeRegex } from './utils/validation';
+
 export default function App() {
   // Language state
   const [lang, setLang] = useState<Language>(() => {
@@ -579,12 +581,7 @@ export default function App() {
       .filter(r => r.enabled && r.pattern.trim() !== '')
       .map(r => {
         const pattern = r.pattern.trim();
-        let regex: RegExp | null = null;
-        if (r.matchMode === 'regex') {
-          try {
-            regex = new RegExp(pattern);
-          } catch (e) {}
-        }
+        const regex = r.matchMode === 'regex' ? compileSafeRegex(pattern) : null;
         return { ...r, pattern, regex };
       });
 
@@ -592,12 +589,7 @@ export default function App() {
     const activeRules = rules
       .filter(r => r.pattern.trim() !== '')
       .map(r => {
-        let regex: RegExp | null = null;
-        if (r.matchMode === 'regex') {
-          try {
-            regex = new RegExp(r.pattern);
-          } catch (e) {}
-        }
+        const regex = r.matchMode === 'regex' ? compileSafeRegex(r.pattern.trim()) : null;
         return { ...r, regex };
       });
 
@@ -874,41 +866,53 @@ export default function App() {
                       </div>
                     ) : (
                       <div className="space-y-2 max-h-[160px] overflow-y-auto pr-1">
-                        {ignoreRules.map((rule) => (
-                          <div key={rule.id} className="flex items-center gap-2 bg-white p-2 rounded-xl border border-slate-200/80 shadow-2xs">
-                            <input
-                              type="checkbox"
-                              checked={rule.enabled}
-                              onChange={() => handleToggleIgnoreRule(rule.id)}
-                              title={rule.enabled ? t.ruleDisableTooltip : t.ruleEnableTooltip}
-                              style={{ accentColor: '#2563eb' }}
-                              className="w-4 h-4 accent-blue-600 text-blue-600 rounded-md border-slate-300 focus:ring-blue-500 cursor-pointer shrink-0"
-                            />
-                            <select
-                              value={rule.matchMode}
-                              onChange={(e) => handleUpdateIgnoreRule(rule.id, 'matchMode', e.target.value)}
-                              className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-slate-700 font-medium focus:outline-hidden focus:border-blue-400 shrink-0 cursor-pointer"
-                            >
-                              <option value="starts-with">{t.startsOption}</option>
-                              <option value="contains">{t.containsOption}</option>
-                              <option value="regex">{t.regexOption}</option>
-                            </select>
-                            <input
-                              type="text"
-                              value={rule.pattern}
-                              onChange={(e) => handleUpdateIgnoreRule(rule.id, 'pattern', e.target.value)}
-                              placeholder={rule.matchMode === 'regex' ? t.regexPlaceholder : t.prefixPlaceholder}
-                              className="flex-1 text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1 text-slate-800 font-mono placeholder:text-slate-400 focus:outline-hidden focus:border-blue-400 focus:bg-white"
-                            />
-                            <button
-                              onClick={() => handleDeleteIgnoreRule(rule.id)}
-                              className="p-1 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors shrink-0 cursor-pointer"
-                              title={t.deleteRuleTooltip}
-                            >
-                              <Trash2 className="w-3.5 h-3.5" />
-                            </button>
-                          </div>
-                        ))}
+                        {ignoreRules.map((rule) => {
+                          const isRegexError = rule.matchMode === 'regex' && rule.pattern.trim() !== '' && !isValidRegex(rule.pattern);
+                          return (
+                            <div key={rule.id} className="flex items-center gap-2 bg-white p-2 rounded-xl border border-slate-200/80 shadow-2xs">
+                              <input
+                                type="checkbox"
+                                checked={rule.enabled}
+                                onChange={() => handleToggleIgnoreRule(rule.id)}
+                                title={rule.enabled ? t.ruleDisableTooltip : t.ruleEnableTooltip}
+                                style={{ accentColor: '#2563eb' }}
+                                className="w-4 h-4 accent-blue-600 text-blue-600 rounded-md border-slate-300 focus:ring-blue-500 cursor-pointer shrink-0"
+                              />
+                              <select
+                                value={rule.matchMode}
+                                onChange={(e) => handleUpdateIgnoreRule(rule.id, 'matchMode', e.target.value)}
+                                className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-slate-700 font-medium focus:outline-hidden focus:border-blue-400 shrink-0 cursor-pointer"
+                              >
+                                <option value="starts-with">{t.startsOption}</option>
+                                <option value="contains">{t.containsOption}</option>
+                                <option value="regex">{t.regexOption}</option>
+                              </select>
+                              <div className="relative flex-1 min-w-0">
+                                <input
+                                  type="text"
+                                  value={rule.pattern}
+                                  onChange={(e) => handleUpdateIgnoreRule(rule.id, 'pattern', e.target.value)}
+                                  placeholder={rule.matchMode === 'regex' ? t.regexPlaceholder : t.prefixPlaceholder}
+                                  className={`w-full text-xs bg-slate-50 border ${
+                                    isRegexError ? 'border-rose-400 focus:ring-rose-200 text-rose-700' : 'border-slate-200 focus:border-blue-400'
+                                  } rounded-lg px-2.5 py-1 text-slate-800 font-mono placeholder:text-slate-400 focus:outline-hidden focus:bg-white`}
+                                />
+                                {isRegexError && (
+                                  <span className="absolute right-2 top-1 text-[9px] text-rose-500 font-semibold bg-rose-50 px-1 py-0.2 rounded border border-rose-200">
+                                    {t.regexErrorBadge}
+                                  </span>
+                                )}
+                              </div>
+                              <button
+                                onClick={() => handleDeleteIgnoreRule(rule.id)}
+                                className="p-1 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors shrink-0 cursor-pointer"
+                                title={t.deleteRuleTooltip}
+                              >
+                                <Trash2 className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
 
@@ -1106,14 +1110,7 @@ export default function App() {
                       </div>
                     ) : (
                       rules.map((rule, idx) => {
-                        let isRegexError = false;
-                        if (rule.matchMode === 'regex' && rule.pattern.trim()) {
-                          try {
-                            new RegExp(rule.pattern);
-                          } catch (e) {
-                            isRegexError = true;
-                          }
-                        }
+                        const isRegexError = rule.matchMode === 'regex' && rule.pattern.trim() !== '' && !isValidRegex(rule.pattern);
 
                         return (
                           <div 
