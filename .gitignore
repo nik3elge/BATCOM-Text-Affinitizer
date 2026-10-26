@@ -55,3 +55,7 @@ ehthumbs.db
 .temp/
 .tmp/
 .cache/
+
+# Superpowers & Agent plans
+.superpowers/
+docs/
