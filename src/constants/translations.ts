@@ -50,6 +50,7 @@ export const TRANSLATIONS = {
     step5Title: 'Импорт в Affinity',
     step5p1: 'Нажмите <b>«Конвертировать и скачать»</b>. Вы получите файл в формате <b>RTF</b> с внедрённой таблицей стилей.',
     step5p2: 'В Affinity создайте текстовый фрейм, нажмите <b>File → Place</b> и выберите этот RTF‑файл.',
+    step5PlacementNote: 'Обязательно включите в меню: <b>File → Placement Policy → Preserve Text Styles on Import</b>. Эта функция должна быть включена.',
     step5p3: 'Если указанных стилей в документе до этого не было, то они появятся в панели <b>Text Styles.</b>',
     step5Tip1: 'Для применения стилей выберите',
     step5Tip2: 'весь текст (Ctrl+A)',
@@ -196,7 +197,7 @@ export const TRANSLATIONS = {
 
     // Block D (Download) & Block E (Preview)
     blockDTitle: 'Блок Г: Готово к импорту в Affinity',
-    blockDDescHtml: 'Экспортируемый RTF-файл содержит внедрённую таблицу стилей. Импортируя его через <b>File → Place</b>, все названия ваших стилей мгновенно определятся и создадутся в <b>Affinity</b>.',
+    blockDDescHtml: 'Экспортируемый RTF-файл содержит внедрённую таблицу стилей. Импортируя его через <b>File → Place</b>, все названия ваших стилей мгновенно определятся и создадутся в <b>Affinity</b> (обязательно включите <b>File → Placement Policy → Preserve Text Styles on Import</b>).',
     convertDownloadBtn: 'Конвертировать и скачать (.rtf)',
     convertBtn: 'Конвертировать и скачать .rtf',
     convertSubtext: 'RTF файл со встроенными стилями абзацев и символов для Affinity',
@@ -296,6 +297,7 @@ export const TRANSLATIONS = {
     step5Title: 'Import into Affinity',
     step5p1: 'Click <b>"Convert & Download"</b>. You will get an <b>RTF</b> file with an embedded stylesheet.',
     step5p2: 'In Affinity, create a text frame, go to <b>File → Place</b> and select this RTF file.',
+    step5PlacementNote: 'Make sure to select: <b>File → Placement Policy → Preserve Text Styles on Import</b>. This feature must be enabled.',
     step5p3: 'If the specified styles were not previously in the document, they will appear in the <b>Text Styles</b> panel.',
     step5Tip1: 'To apply styles, select',
     step5Tip2: 'all text (Ctrl+A)',
@@ -442,7 +444,7 @@ export const TRANSLATIONS = {
 
     // Block D (Download) & Block E (Preview)
     blockDTitle: 'Block D: Ready for Affinity Import',
-    blockDDescHtml: 'The exported RTF file contains an embedded stylesheet. When placing it via <b>File → Place</b>, all your style names will be instantly recognized and created in <b>Affinity</b>.',
+    blockDDescHtml: 'The exported RTF file contains an embedded stylesheet. When placing it via <b>File → Place</b>, all your style names will be instantly recognized and created in <b>Affinity</b> (make sure <b>File → Placement Policy → Preserve Text Styles on Import</b> is enabled).',
     convertDownloadBtn: 'Convert & Download (.rtf)',
     convertBtn: 'Convert & Download .rtf',
     convertSubtext: 'RTF file with embedded paragraph and character styles for Affinity',

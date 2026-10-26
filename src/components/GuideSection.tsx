@@ -162,6 +162,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
           <div className="text-xs text-slate-600 leading-relaxed space-y-1.5">
             <p dangerouslySetInnerHTML={{ __html: t.step5p1 }} />
             <p dangerouslySetInnerHTML={{ __html: t.step5p2 }} />
+            <p dangerouslySetInnerHTML={{ __html: t.step5PlacementNote }} />
             <p dangerouslySetInnerHTML={{ __html: t.step5p3 }} />
             <div className="mt-3 p-3 rounded-xl bg-gradient-to-r from-indigo-50/90 via-blue-50/80 to-indigo-50/70 border border-indigo-200/80 shadow-2xs flex items-start gap-2.5 text-slate-800">
               <div className="p-1.5 bg-blue-600 text-white rounded-lg shrink-0 mt-0.5 shadow-2xs">
