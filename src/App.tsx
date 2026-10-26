@@ -664,6 +664,10 @@ export default function App() {
   }, [processedLines, rules, inlineRules, defaultStyleName]);
 
   const handleDownloadFile = () => {
+    if (!rawText.trim() || processedLines.length === 0) {
+      triggerToast(t.toastRawTextEmpty);
+      return;
+    }
     const blob = new Blob([generatedRTFContent], { type: 'text/rtf;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -769,8 +773,8 @@ export default function App() {
           <div className="lg:col-span-6 flex flex-col gap-4">
             <div className={`bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col transition-all duration-300 ${
               showGuide 
-                ? 'h-[480px] sm:h-[550px] lg:h-[calc(100vh-450px)] lg:min-h-[400px]' 
-                : 'h-[520px] sm:h-[700px] lg:h-[calc(100vh-250px)] lg:min-h-[550px]'
+                ? 'h-[540px] sm:h-[620px] lg:h-[calc(100vh-320px)] lg:min-h-[500px]' 
+                : 'h-[560px] sm:h-[660px] lg:h-[calc(100vh-220px)] lg:min-h-[540px]'
             }`}>
               {/* Header */}
               <div className="px-4 sm:px-5 py-3.5 sm:py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -839,7 +843,7 @@ export default function App() {
 
               {/* Collapsible Symbol Ignore Rules Panel */}
               {showIgnorePanel && (
-                <div className="bg-slate-50/90 border-b border-slate-200/80 p-3.5 space-y-2.5 shrink-0 max-h-[320px] overflow-y-auto">
+                <div className="bg-slate-50/90 border-b border-slate-200/80 p-3.5 space-y-2.5 shrink-0 max-h-[200px] overflow-y-auto">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-slate-700">{t.ignoreRulesHeading}</span>
@@ -953,7 +957,7 @@ export default function App() {
 
               {/* Textarea Workspace Area */}
               <div 
-                className={`relative flex-1 flex flex-col p-4 transition-colors ${
+                className={`relative flex-1 min-h-[220px] flex flex-col p-4 transition-colors ${
                   dragActive ? 'bg-blue-50/50 border-2 border-dashed border-blue-400' : ''
                 }`}
                 onDragEnter={handleDrag}
@@ -1021,8 +1025,8 @@ export default function App() {
           <div className="lg:col-span-6 flex flex-col gap-4">
             <div className={`bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col transition-all duration-300 ${
               showGuide 
-                ? 'h-[480px] sm:h-[550px] lg:h-[calc(100vh-450px)] lg:min-h-[400px]' 
-                : 'h-[520px] sm:h-[700px] lg:h-[calc(100vh-250px)] lg:min-h-[550px]'
+                ? 'h-[540px] sm:h-[620px] lg:h-[calc(100vh-320px)] lg:min-h-[500px]' 
+                : 'h-[560px] sm:h-[660px] lg:h-[calc(100vh-220px)] lg:min-h-[540px]'
             }`}>
               {/* Header */}
               <div className="px-4 sm:px-5 py-3.5 sm:py-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -1506,7 +1510,10 @@ export default function App() {
           <div className="flex items-center gap-2.5 w-full md:w-auto">
             <button
               onClick={handleDownloadFile}
-              className="flex-1 md:flex-initial flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30 transition-all cursor-pointer"
+              disabled={!rawText.trim()}
+              aria-disabled={!rawText.trim()}
+              title={!rawText.trim() ? t.toastRawTextEmpty : t.convertDownloadBtn}
+              className="flex-1 md:flex-initial flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30 transition-all cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>{t.convertDownloadBtn}</span>

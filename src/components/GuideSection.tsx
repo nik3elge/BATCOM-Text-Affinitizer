@@ -39,9 +39,9 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-indigo-50/30 to-sky-50 border border-blue-100 rounded-2xl p-3.5 sm:p-5 relative shadow-xs animate-fade-in">
+    <div className="bg-gradient-to-r from-blue-50 via-indigo-50/30 to-sky-50 border border-blue-100 rounded-2xl p-3 sm:p-4 relative shadow-xs animate-fade-in">
       {/* Header with Title, Scroll Arrows, and Close */}
-      <div className="flex items-center justify-between mb-3.5">
+      <div className="flex items-center justify-between mb-2.5">
         <h2 className="text-slate-900 font-display font-bold text-xs sm:text-sm flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-blue-500 shrink-0" />
           <span>{t.howItWorks}</span>
@@ -83,7 +83,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
         className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 pt-0.5 px-0.5 scrollbar-thin scrollbar-thumb-blue-200/80"
       >
         {/* Step 1 */}
-        <div className="w-full sm:w-[420px] md:w-[450px] shrink-0 snap-start bg-white/90 backdrop-blur-xs p-3.5 sm:p-4 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
+        <div className="w-full sm:w-[400px] md:w-[420px] shrink-0 snap-start bg-white/95 backdrop-blur-xs p-3 sm:p-3.5 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs shrink-0">1</span>
             <p className="font-bold text-slate-800 text-sm">{t.step1Title}</p>
@@ -97,7 +97,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
         </div>
 
         {/* Step 2 */}
-        <div className="w-full sm:w-[420px] md:w-[450px] shrink-0 snap-start bg-white/90 backdrop-blur-xs p-3.5 sm:p-4 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
+        <div className="w-full sm:w-[400px] md:w-[420px] shrink-0 snap-start bg-white/95 backdrop-blur-xs p-3 sm:p-3.5 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs shrink-0">2</span>
             <p className="font-bold text-slate-800 text-sm">{t.step2Title}</p>
@@ -124,7 +124,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
         </div>
 
         {/* Step 3 */}
-        <div className="w-full sm:w-[420px] md:w-[450px] shrink-0 snap-start bg-white/90 backdrop-blur-xs p-3.5 sm:p-4 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
+        <div className="w-full sm:w-[400px] md:w-[420px] shrink-0 snap-start bg-white/95 backdrop-blur-xs p-3 sm:p-3.5 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs shrink-0">3</span>
             <p className="font-bold text-slate-800 text-sm">{t.step3Title}</p>
@@ -145,7 +145,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
         </div>
 
         {/* Step 4 */}
-        <div className="w-full sm:w-[420px] md:w-[450px] shrink-0 snap-start bg-white/90 backdrop-blur-xs p-3.5 sm:p-4 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
+        <div className="w-full sm:w-[400px] md:w-[420px] shrink-0 snap-start bg-white/95 backdrop-blur-xs p-3 sm:p-3.5 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs shrink-0">4</span>
             <p className="font-bold text-slate-800 text-sm">{t.step4Title}</p>
@@ -157,7 +157,7 @@ export const GuideSection: React.FC<GuideSectionProps> = ({ lang = 'ru', onClose
         </div>
 
         {/* Step 5 */}
-        <div className="w-full sm:w-[420px] md:w-[450px] shrink-0 snap-start bg-white/90 backdrop-blur-xs p-3.5 sm:p-4 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
+        <div className="w-full sm:w-[400px] md:w-[420px] shrink-0 snap-start bg-white/95 backdrop-blur-xs p-3 sm:p-3.5 rounded-xl border border-blue-100/80 shadow-2xs flex flex-col">
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs shrink-0">5</span>
             <p className="font-bold text-slate-800 text-sm">{t.step5Title}</p>
